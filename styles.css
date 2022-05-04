@@ -2,3 +2,38 @@ html {
     text-align: center;
     font-family: Helvetica;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#calculator {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    min-height: 90vh;
+    background: linear-gradient(to right, #DC143C, #e76b06);
+}
+
+#container {
+    display: grid;
+    background-color: #000;
+    border: 10px solid #a9a9a9;
+    border-radius: 5px;
+    gap: 1.5px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+}
+
+#display {
+    display: flex;
+    grid-column: 1/-1;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 5px;
+    font-size: 5.5em;
+    color: white;
+}
