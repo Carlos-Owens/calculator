@@ -22,10 +22,9 @@ body {
     background-color: #000;
     border: 10px solid #a9a9a9;
     border-radius: 5px;
-    gap: 1.5px;
+    gap: 1px;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(100px, auto) repeat(5, 80px);
-    
 }
 
 #display {
@@ -37,4 +36,45 @@ body {
     padding: 5px;
     font-size: 5.5em;
     color: white;
+    font-weight: initial;
+    margin: 5px;
+}
+
+button {
+    font-size: 2em;
+    border-radius: 5%;
+    border: none;
+    font-weight: initial;
+    color: black;
+}
+
+#zero {
+    grid-column: span 2;
+}
+
+.clear {
+    grid-column: span 2;
+    background-color: #f00000;
+}
+
+.clear:active {
+    background-color: #b22222
+}
+
+.operand:active,
+.decimal:active {
+    background-color: #FFA07A;
+}
+
+.equals {
+    background-color: #7cf00c;
+}
+
+.equals:active {
+    background-color: #008000
+}
+
+.operator:active,
+.sign:active {
+    background-color: #ffd700
 }
