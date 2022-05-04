@@ -11,7 +11,7 @@ body {
 #calculator {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     height: 100vh;
     min-height: 90vh;
     background: linear-gradient(to right, #DC143C, #e76b06);
@@ -25,6 +25,7 @@ body {
     gap: 1.5px;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    
 }
 
 #display {
