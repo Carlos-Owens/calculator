@@ -59,7 +59,7 @@ function operate (operator, num1, num2 ) {
             break;
     }
 
-function runCalc() {
+function runCalculator() {
     
     function numClicked() {
 
@@ -112,6 +112,40 @@ function runCalc() {
             });
         });
     }
+    // append the sum of calculations
+    function runCalculations() {
+        const equalsButton = document.querySelector(".equals");
+        equalsButton.addEventListener("click", () => {
+            const calcDisplay = document.querySelector("#display");
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            operate(operator, num1, num2);
+        });
+    }
+
+    const clearButton = document.querySelector(".clear");
+    clearButton.addEventListener("click", () => {
+        const calcDisplay = document.querySelector("#display");
+        calcDisplay.textContent = "";
+    });
+
+    const signButton = document.querySelector(".sign");
+    signButton.addEventListener("click", () => {
+
+        if (operator === "") {
+            const calcDisplay = document.querySelector("#display");
+            tempNum1.splice(0,1, (tempNum1[0] * -1).toString());
+            num1 = tempNum1.join("");
+            calcDisplay.textContent = num1;
+        } else {
+            const calcDisplay = document.querySelector("#display");
+            tempNum2.splice(0,1, (tempNum2[0] * -1).toString());
+            num2 = tempNum2.join("");
+            calcDisplay.textContent = num2;
+        }
+    });
+
+    
 }
 
 }
