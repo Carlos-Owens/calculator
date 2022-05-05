@@ -85,23 +85,33 @@ function runCalc() {
         });
     } 
 
-    // function operatorClicked() {
+    function operatorClicked() {
 
-    //     const operatorButton = document.querySelectorAll(".operator");
-    //     operatorButton.forEach((button) => {
-    //         button.addEventListener("click", () => {
-    //             operator = button.getAttribute(".value");
-    //             tempOperator.push(operator);
+        const operatorButton = document.querySelectorAll(".operator");
+        operatorButton.forEach((button) => {
+            button.addEventListener("click", () => {
+                operator = button.getAttribute(".value");
+                tempOperator.push(operator);
 
-    //             if((tempNum1 !== "") && (tempNum2 !== "")) {
-    //                 const calcDisplay = document.querySelector("#display");
-    //                 num1 = tempNum1.join("");
-    //                 num2 = tempNum2.join("");
-
-    //             }
-    //         })
-    //     })
-    // }
+                if((tempNum1 !== "") && (tempNum2 !== "")) {
+                    const calcDisplay = document.querySelector("#display");
+                    num1 = tempNum1.join("");
+                    num2 = tempNum2.join("");
+                    num1 = parseFloat(num1);
+                    num2 = parseFloat(num2);
+                    tempOperator = tempOperator[tempOperator.length - 2].toString();
+                    operate(tempOperator,num1,num2);
+                    let tempStringValue = calcDisplay.textContent;
+                    tempNum1 = [];
+                    tempNum2 = [];
+                    num1 = 0;
+                    num2 = 0;
+                    tempNum1.push(tempStringValue);
+                    num1 = tempNum1.join("");
+                }
+            });
+        });
+    }
 }
 
 }
