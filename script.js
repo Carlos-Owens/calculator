@@ -4,6 +4,7 @@ let tempNum1 = [];
 let tempNum2 = [];
 let firstValue = 0;
 let tempOperator = [];
+let operator = ""
 //let operator = "";
 
 function add(num1, num2) {
@@ -41,7 +42,7 @@ function multiply(num1, num2) {
     calcDisplay.textContent = rounded;
 }
 
-function operator (operator, num1, num2 ) {
+function operate (operator, num1, num2 ) {
     
     switch (operator) {
         case "+":
@@ -57,4 +58,50 @@ function operator (operator, num1, num2 ) {
            divide(num1, num2);
             break;
     }
+
+function runCalc() {
+    
+    function numClicked() {
+
+        const operandButtons = document.querySelectorAll(".operand");
+        operandButtons.forEach((button) => {
+            button.addEventListener("click",  () => {
+                firstValue = button.getAttribute("value");
+                const calcDisplay = document.querySelector("#display");
+
+                // appends the first number to the display
+                if (operator === "") {
+                    tempNum1.push(firstValue);
+                    num1 = tempNum1.join("");
+                    calcDisplay.textContent = num1;
+                } 
+                // appends the second number to the display
+                else {
+                    tempNum2.push(firstValue);
+                    num2 = tempNum2.join("");
+                    calcDisplay.textContent = num2;
+                }
+            });
+        });
+    } 
+
+    // function operatorClicked() {
+
+    //     const operatorButton = document.querySelectorAll(".operator");
+    //     operatorButton.forEach((button) => {
+    //         button.addEventListener("click", () => {
+    //             operator = button.getAttribute(".value");
+    //             tempOperator.push(operator);
+
+    //             if((tempNum1 !== "") && (tempNum2 !== "")) {
+    //                 const calcDisplay = document.querySelector("#display");
+    //                 num1 = tempNum1.join("");
+    //                 num2 = tempNum2.join("");
+
+    //             }
+    //         })
+    //     })
+    // }
+}
+
 }
